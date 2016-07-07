@@ -38,7 +38,7 @@ def login():
                     session['username'] = request.form['username']
                     return redirect(url_for('index'))
                 else:
-                    error = "Invalid Credential"
+                    error = "Invalid Password"
         else:
             error = "Invalid Username"
     return render_template('login.html', error=error)
