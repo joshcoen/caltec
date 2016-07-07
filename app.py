@@ -13,7 +13,7 @@ class ServerError(Exception):pass
 @app.route('/')
 def index():
     if 'username' in session:
-        print escape(session['username'])
+        username_session = escape(session['username'])
         return render_template('index.html', session_user_name=username_session)
 
     return redirect(url_for('login'))
