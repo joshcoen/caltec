@@ -39,7 +39,7 @@ def login():
 
             for row in cur.fetchall():
                 if md5(password_form).hexdigest() == md5(row[0]).hexdigest():
-                    session['username'] = request.form['username']
+                    session['username'] = username_form
                     return redirect(url_for('index'))
 
             raise ServerError('Invalid password')
