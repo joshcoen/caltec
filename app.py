@@ -27,8 +27,8 @@ def login():
 
     error = None
     try:
-        print request.form['username']
-        print request.form['password']
+        #print request.form['username']
+        #print request.form['password']
         if request.method == 'POST':
             username_form  = request.form['username']
             cur.execute("SELECT COUNT(1) FROM users WHERE user_name = {};"
