@@ -33,6 +33,7 @@ def login():
         if cur.fetchone()[0]:
             cur.execute("SELECT user_pass FROM users WHERE user_name = %s;", [username_form]) # FETCH THE HASHED PASSWORD
             for row in cur.fetchall():
+                print password_form
                 print row[0]
                 if md5(password_form).hexdigest() == row[0]:
                     session['username'] = request.form['username']
