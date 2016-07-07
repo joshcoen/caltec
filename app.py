@@ -41,11 +41,11 @@ def login():
             print password_form
             cur.execute("SELECT user_pass FROM users WHERE user_name = %s;", [username_form])
 
-            #for row in cur.fetchall():
-            row = cur.fetchall()
-            if md5(password_form).hexdigest() == row:
-                session['username'] = request.form['username']
-                return redirect(url_for('index'))
+            for row in cur.fetchall():
+                print row
+                if md5(password_form).hexdigest() == row:
+                    session['username'] = request.form['username']
+                    return redirect(url_for('index'))
 
             raise ServerError('Invalid password')
     except ServerError as e:
