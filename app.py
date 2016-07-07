@@ -43,6 +43,7 @@ def login():
 
             for row in cur.fetchall():
                 print row[0]
+                print md5(password_form).hexdigest()
                 if md5(password_form).hexdigest() == row[0]:
                     session['username'] = request.form['username']
                     return redirect(url_for('index'))
