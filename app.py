@@ -13,6 +13,7 @@ class ServerError(Exception):pass
 @app.route('/')
 def index():
     if 'username' in session:
+        print escape(session['username'])
         return redirect(url_for('login'))
 
     username_session = escape(session['username']).capitalize()
