@@ -39,7 +39,7 @@ def login():
                 else:
                     error = "Invalid Credential"
         else:
-            error = "Invalid Credential"
+            error = "Invalid Username"
     return render_template('login.html', error=error)
 
 
