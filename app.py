@@ -40,9 +40,11 @@ def login():
             password_form  = request.form['password']
             print password_form
             cur.execute("SELECT user_pass FROM users WHERE user_name = %s;", [username_form])
+            query = cur.execute("SELECT user_pass FROM users WHERE user_name = %s;", [username_form])
+            print query
 
             for row in cur.fetchall():
-                print row
+                #print row
                 if md5(password_form).hexdigest() == row[0]:
                     session['username'] = request.form['username']
                     return redirect(url_for('index'))
