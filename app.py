@@ -20,6 +20,7 @@ def index():
     return render_template('index.html', session_user_name=username_session)
 
 @app.route('/login', methods=['GET', 'POST'])
+
 def login():
     if 'username' in session:
         return redirect(url_for('index'))
@@ -27,14 +28,14 @@ def login():
     error = None
     try:
         if request.method == 'POST':
-            username_form  = request.form['user_name']
+            username_form  = request.form['user']
             cur.execute("SELECT COUNT(1) FROM users WHERE user_name = {};"
                         .format(username_form))
 
             if not cur.fetchone()[0]:
                 raise ServerError('Invalid username')
 
-            password_form  = request.form['user_pass']
+            password_form  = request.form['pass']
             cur.execute("SELECT user_pass FROM users WHERE user_name = {};"
                         .format(username_form))
 
