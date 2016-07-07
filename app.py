@@ -33,7 +33,7 @@ def login():
             username_form  = request.form['username']
             cur.execute("SELECT COUNT(1) FROM users WHERE user_name = %s;", [username_form])
             print username_form
-            a = cur.fetchall(); print a
+            a = cur.fetchall; print a
 
             if not cur.fetchone()[0]:
                 raise ServerError('Invalid username')
