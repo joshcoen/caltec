@@ -28,6 +28,7 @@ def login():
     if request.method == 'POST':
         username_form  = request.form['username']
         password_form  = request.form['password']
+        print username_form
         cur.execute("SELECT COUNT(1) FROM users WHERE user_name = %s;", [username_form]) # CHECKS IF USERNAME EXSIST
         if cur.fetchone()[0]:
             cur.execute("SELECT user_pass FROM users WHERE user_name = %s;", [username_form]) # FETCH THE HASHED PASSWORD
