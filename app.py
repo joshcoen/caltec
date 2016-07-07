@@ -27,15 +27,17 @@ def login():
 
     error = None
     try:
+        print request.form['username']
+        print request.form['password']
         if request.method == 'POST':
-            username_form  = request.form['user']
+            username_form  = request.form['username']
             cur.execute("SELECT COUNT(1) FROM users WHERE user_name = {};"
                         .format(username_form))
 
             if not cur.fetchone()[0]:
                 raise ServerError('Invalid username')
 
-            password_form  = request.form['pass']
+            password_form  = request.form['password']
             cur.execute("SELECT user_pass FROM users WHERE user_name = {};"
                         .format(username_form))
 
