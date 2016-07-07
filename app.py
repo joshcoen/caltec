@@ -22,8 +22,8 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 
 def login():
-    print request.form['username']
-    print request.form['password']
+    #print request.form['username']
+    #print request.form['password']
     if 'username' in session:
         return redirect(url_for('index'))
 
