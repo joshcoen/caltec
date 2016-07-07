@@ -42,9 +42,9 @@ def login():
             cur.execute("SELECT user_pass FROM users WHERE user_name = %s;", [username_form])
 
             for row in cur.fetchall():
-                print md5(row[0])
+                print md5(row[0]).hexdigest()
                 print md5(password_form).hexdigest()
-                if md5(password_form).hexdigest() == md5(row[0]):
+                if md5(password_form).hexdigest() == md5(row[0]).hexdigest():
                     session['username'] = request.form['username']
                     return redirect(url_for('index'))
 
