@@ -22,28 +22,36 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 
 def login():
-    error = None
+    #print request.form['username']
+    #print request.form['password']
     if 'username' in session:
         return redirect(url_for('index'))
-    if request.method == 'POST':
-        username_form  = request.form['username']
-        password_form  = request.form['password']
-        print username_form
-        cur.execute("SELECT COUNT(1) FROM users WHERE user_name = %s;", [username_form]) # CHECKS IF USERNAME EXSIST
-        if cur.fetchone()[0]:
-            cur.execute("SELECT user_pass FROM users WHERE user_name = %s;", [username_form]) # FETCH THE HASHED PASSWORD
+
+    error = None
+    try:
+        if request.method == 'POST':
+            username_form  = request.form['username']
+            cur.execute("SELECT COUNT(1) FROM users WHERE user_name = %s;", [username_form])
+            print username_form
+
+            if not cur.fetchone()[0]:
+                raise ServerError('Invalid username')
+
+            password_form  = request.form['password']
+            print password_form
+            cur.execute("SELECT user_pass FROM users WHERE user_name = %s;", [username_form])
+
             for row in cur.fetchall():
-                print password_form
                 print row[0]
                 if md5(password_form).hexdigest() == row[0]:
                     session['username'] = request.form['username']
                     return redirect(url_for('index'))
-                else:
-                    error = "Invalid Password"
-        else:
-            error = "Invalid Username"
-    return render_template('login.html', error=error)
 
+            raise ServerError('Invalid password')
+    except ServerError as e:
+        error = str(e)
+
+    return render_template('login.html', error=error)
 
 
 @app.route('/logout')
