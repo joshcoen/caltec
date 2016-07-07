@@ -38,6 +38,7 @@ def login():
                 raise ServerError('Invalid username')
 
             password_form  = request.form['password']
+            print password_form
             cur.execute("SELECT user_pass FROM users WHERE user_name = %s;", [username_form])
 
             for row in cur.fetchall():
