@@ -22,13 +22,13 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 
 def login():
+    print request.form['username']
+    print request.form['password']
     if 'username' in session:
         return redirect(url_for('index'))
 
     error = None
     try:
-        #print request.form['username']
-        #print request.form['password']
         if request.method == 'POST':
             username_form  = request.form['username']
             cur.execute("SELECT COUNT(1) FROM users WHERE user_name = {};"
