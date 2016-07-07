@@ -14,10 +14,13 @@ class ServerError(Exception):pass
 def index():
     if 'username' in session:
         print escape(session['username'])
-        return redirect(url_for('login'))
+        username_session = escape(session['username']).capitalize()
+        return render_template('index.html', session_user_name=username_session)
+        #return redirect(url_for('login'))
 
-    username_session = escape(session['username']).capitalize()
-    return render_template('index.html', session_user_name=username_session)
+    #username_session = escape(session['username']).capitalize()
+    #return render_template('index.html', session_user_name=username_session)
+    return redirect(url_for('login'))
 
 @app.route('/login', methods=['GET', 'POST'])
 
