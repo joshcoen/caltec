@@ -53,6 +53,10 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('index'))
 
+@app.route('/cal')
+def cal():
+    return (url_for('cal'))
+
 app.secret_key = 'T0Gr98j/3yX R~XHH!jmN]LWX/,?89'
 
 if __name__ == "__main__":
