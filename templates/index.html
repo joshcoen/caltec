@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Grayscale - Start Bootstrap Theme</title>
+    <title>Sirius Innovation Labs Scheduler</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../static/greyscale/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -41,7 +41,7 @@
                     Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i> <span class="light">Start</span> Bootstrap
+                    <i class="fa fa-play-circle"></i> <span class="light">TEC</span> Scheduler
                 </a>
             </div>
 
@@ -53,13 +53,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#download">Download</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        {% if session_user_name %}
+                             <p>Hello <b>{{ session_user_name }}</b></p>
+                            {% endif %}
+                            <a class=page-scroll" href="{{ url_for('logout') }}">Logout</a>
                     </li>
                 </ul>
             </div>
