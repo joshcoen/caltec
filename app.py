@@ -55,7 +55,7 @@ def logout():
 
 @app.route('/cal')
 def cal():
-    return render_template('cal.html'
+    return render_template('cal.html')
 
 app.secret_key = 'T0Gr98j/3yX R~XHH!jmN]LWX/,?89'
 
