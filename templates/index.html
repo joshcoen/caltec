@@ -67,16 +67,6 @@
         </div>
         <!-- /.container -->
     </nav>
-div class="container" style="margin-top:50px;">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3 text-center">
-                {% if session_user_name %}
-                    <p>Hello <b>{{ session_user_name }}</b></p>
-                {% endif %}
-                <a href="{{ url_for('logout') }}">Logout</a>
-            </div>
-        </div>
-    </div>
     <!-- Intro Header -->
     <header class="intro">
         <div class="intro-body">
