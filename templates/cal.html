@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minimum Setup</title>
+    <link rel="stylesheet" href="../static/greyscale/css/grayscale.min.css">
+    <link rel="stylesheet" href="../static/bs_cal/bootstrap-calendar/css/calendar.css">
+</head>
+<body>
+
+    <div id="calendar"></div>
+
+    <script type="text/javascript" src="../static/bs_cal/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../static/bs_cal/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="../static/bs_cal/bootstrap-calendar/js/calendar.js"></script>
+    <script type="text/javascript">
+        var calendar = $("#calendar").calendar(
+            {
+                ttmpl_path: "../static/bs_cal/bootstrap-calendar/tmpls/",
+                events_source: function () { return []; }
+            });
+    </script>
+</body>
+</html>
