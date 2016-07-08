@@ -87,21 +87,15 @@
                     <input type="password" class="form-control" id="inputPassword" placeholder="Password">
                     </div>
                 </div>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker1'>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
             </form>
-            <div id="calendar"></div>
-            <div class=col-sm-12">
-
-                <script type="text/javascript" src="../static/bs_cal/jquery/dist/jquery.js"></script>
-                <script type="text/javascript" src="../static/bs_cal/underscore/underscore-min.js"></script>
-                <script type="text/javascript" src="../static/bs_cal/bootstrap-calendar/js/calendar.js"></script>
-                <script type="text/javascript">
-                    var calendar = $("#calendar").calendar(
-                        {
-                            tmpl_path: "../static/bs_cal/bootstrap-calendar/tmpls/",
-                            events_source: function () { return []; }
-                        });
-                </script>
-            </div>
         </div>
     </header>
 
