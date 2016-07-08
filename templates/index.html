@@ -88,19 +88,20 @@
                     </div>
                 </div>
             </form>
-        </div>
-        <div id="calendar"></div>
+            <div id="calendar">
 
-            <script type="text/javascript" src="../static/js/vendor/jquery-1.9.1.js"></script>
-            <script type="text/javascript" src="../static/js/vendor/underscore-min.js"></script>
-            <script type="text/javascript" src="../static/bootstrap-calendar/js/calendar.js"></script>
-            <script type="text/javascript">
-                var calendar = $("#calendar").calendar(
-                    {
-                        tmpl_path: "/tmpls/",
-                        events_source: function () { return []; }
-                    });
-            </script>
+                <script type="text/javascript" src="../static/js/vendor/jquery-1.9.1.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/underscore-min.js"></script>
+                <script type="text/javascript" src="../static/bootstrap-calendar/js/calendar.js"></script>
+                <script type="text/javascript">
+                    var calendar = $("#calendar").calendar(
+                        {
+                            tmpl_path: "/tmpls/",
+                            events_source: function () { return []; }
+                        });
+                </script>
+            </div>
+        </div>
     </header>
 
     <!-- Footer -->
