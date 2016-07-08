@@ -7,13 +7,13 @@
 
     <title>Sirius Innovation Labs Scheduler</title>
 
-    <script type="text/javascript" src="../static/dt_pick/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../static/dt_pick/moment/min/moment.min.js"></script>
+    <!--<script type="text/javascript" src="../static/dt_pick/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/dt_pick/moment/min/moment.min.js"></script>-->
+
     <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.14.30/js/bootstrap-datetimepicker.min.js"></script>
-    <!--<script type="text/javascript" src="../static/dt_pick/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>-->
+    <script type="text/javascript" src="../static/bootstrap-datepicker-1.6.1-dist/css/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../static/dt_pick/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="../static/bootstrap-datepicker-1.6.1-dist/cssbootstrap-datepicker.min.css" />
 
 </head>
 
@@ -22,7 +22,7 @@
     <div class="row">
         <div class='col-sm-6'>
             <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
+                <div class='input-group date' id='datepicker1'>
                     <input type='text' class="form-control" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
@@ -32,7 +32,7 @@
         </div>
         <script type="text/javascript">
             $(function() {
-                $('#datetimepicker1').datetimepicker();
+                $('#datepicker1').datepicker();
             });
         </script>
     </div>
