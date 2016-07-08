@@ -67,9 +67,7 @@
         </div>
         <!-- /.container -->
     </nav>
-
-    <!-- Intro Header -->
-     <div class="container" style="margin-top:50px;">
+div class="container" style="margin-top:50px;">
         <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center">
                 {% if session_user_name %}
@@ -79,11 +77,18 @@
             </div>
         </div>
     </div>
+    <!-- Intro Header -->
     <header class="intro">
         <div class="intro-body">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
+                        <div class="col-md-6 col-md-offset-3 text-center">
+                            {% if session_user_name %}
+                             <p>Hello <b>{{ session_user_name }}</b></p>
+                            {% endif %}
+                            <a href="{{ url_for('logout') }}">Logout</a>
+                        </div>
                         <h1 class="brand-heading">Grayscale</h1>
                         <p class="intro-text">A free, responsive, one page Bootstrap theme.
                             <br>Created by Start Bootstrap.</p>
