@@ -67,28 +67,26 @@
     <!-- Intro Header -->
     <header class="intro">
         <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Solution...
-                            <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Project Hydra</a></li>
-                                <li><a href="#">VMware vRealize Automation</a></li>
-                                <li><a href="#">Cisco ACI</a></li>
-                            </ul>
-                        </div>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Select Solution</label>
+                    <div class="col-sm-10">
                         <select class="form-control">
-                            <option value="one">One</option>
-                            <option value="two">Two</option>
-                            <option value="three">Three</option>
-                            <option value="four">Four</option>
-                            <option value="five">Five</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
                         </select>
                     </div>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                </div>
+            </form>
         </div>
     </header>
 
