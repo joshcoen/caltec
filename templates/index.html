@@ -21,6 +21,7 @@
 
     <!-- Theme CSS -->
     <link href="../static/greyscale/css/grayscale.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/bootstrap-calendar/css/calendar.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -88,6 +89,18 @@
                 </div>
             </form>
         </div>
+        <div id="calendar"></div>
+
+            <script type="text/javascript" src="../static/js/vendor/jquery-1.9.1.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/underscore-min.js"></script>
+            <script type="text/javascript" src="../static/bootstrap-calendar/js/calendar.js"></script>
+            <script type="text/javascript">
+                var calendar = $("#calendar").calendar(
+                    {
+                        tmpl_path: "/tmpls/",
+                        events_source: function () { return []; }
+                    });
+            </script>
     </header>
 
     <!-- Footer -->
