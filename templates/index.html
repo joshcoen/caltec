@@ -102,9 +102,9 @@
                     <div class="col-sm-4">
                     <div class='input-group date'>
                         <input type='text' class="form-control" id="pick" name="pick" />
-                        <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                        </div>
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </span>
                     </div>
                     </div>
                 </div>
@@ -136,14 +136,18 @@
     <script src="../static/greyscale/js/grayscale.min.js"></script>
 
     <script>
-    $(function () {
-        $("#pick").datepicker({
+        $(document).ready(function(){
+        var date_input=$('input[name="pick"]'); //our date input has the name "date"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        var options={
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
             autoclose: true,
-            todayHighlight: true
-        }).datepicker('update', new Date());;
-    });
+        };
+        date_input.datepicker(options);
+        })
     </script>
-
 
 </body>
 
