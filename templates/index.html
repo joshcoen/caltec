@@ -99,7 +99,7 @@
                 </div>
                 <div class="form-group">
                     <label for="pick" class="col-sm-2 control-label">Select Date</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-2">
                     <div class='input-group pick'>
                         <input type='text' class="form-control" id="pick" name="pick" />
                         <span class="input-group-addon">
@@ -127,15 +127,7 @@
     <script src="../static/greyscale/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery    <script>
-    $(function () {
-        $("#pick").datepicker({
-            autoclose: true,
-            todayHighlight: true
-        }).datepicker('update', new Date());;
-    });
-    </script>
--easing/1.3/jquery.easing.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
@@ -144,12 +136,17 @@
     <script src="../static/greyscale/js/grayscale.min.js"></script>
 
     <script>
-    $(function () {
-        $("#pick").datepicker({
+        $(document).ready(function(){
+        var date_input=$('input[name="pick"]'); //our date input has the name "pick"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        var options={
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
             autoclose: true,
-            todayHighlight: true
-        }).datepicker('update', new Date());;
-    });
+        };
+        date_input.datepicker(options);
+        })
     </script>
 
 </body>
