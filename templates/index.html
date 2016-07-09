@@ -98,10 +98,10 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="selectDate" class="col-sm-2 control-label">Select Date</label>
-                    <div class="col-sm-2">
-                    <div class='input-group date' id='datepicker1'>
-                        <input type='text' class="form-control" />
+                    <label for="pick" class="col-sm-2 control-label">Select Date</label>
+                    <div class="col-sm-4">
+                    <div class='input-group date'>
+                        <input type='text' class="form-control" id="pick" name="pick" />
                         <div class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </div>
@@ -135,9 +135,13 @@
     <!-- Theme JavaScript -->
     <script src="../static/greyscale/js/grayscale.min.js"></script>
 
-    <script type="text/javascript">
-        $('#datepicker1 .input-group.date').datepicker();
-         });
+    <script>
+    $(function () {
+        $("#pick").datepicker({
+            autoclose: true,
+            todayHighlight: true
+        }).datepicker('update', new Date());;
+    });
     </script>
 
 </body>
