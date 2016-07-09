@@ -100,7 +100,7 @@
                 <div class="form-group">
                     <label for="pick" class="col-sm-2 control-label">Select Date</label>
                     <div class="col-sm-4">
-                    <div class='input-group date'>
+                    <div class='input-group pick'>
                         <input type='text' class="form-control" id="pick" name="pick" />
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-calendar"></i>
@@ -137,7 +137,7 @@
 
     <script>
         $(document).ready(function(){
-        var date_input=$('input[name='pick .input-group.date']'); //our date input has the name "pick"
+        var date_input=$('input[name="pick"]'); //our date input has the name "pick"
         var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
         var options={
             format: 'mm/dd/yyyy',
