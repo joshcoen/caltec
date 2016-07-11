@@ -96,11 +96,11 @@
 }
 .table-striped .datepicker table tr td,
 .table-striped .datepicker table tr th {
-  background-color: transparent;
+  background-color: #999999;
 }
 .datepicker table tr td.day:hover,
 .datepicker table tr td.day.focused {
-  background: #999999;
+  background: #eeeeee;
   cursor: pointer;
 }
 .datepicker table tr td.old,
